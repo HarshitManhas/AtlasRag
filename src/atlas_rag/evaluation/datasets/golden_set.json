@@ -1,0 +1,53 @@
+[
+  {
+    "id": "tc_001",
+    "query": "What is the total revenue of all products in 2024?",
+    "type": "table_aggregation",
+    "expected_answer_number": 995000,
+    "expected_table_id": "tbl_001",
+    "expected_cells": [
+      ["tbl_001", 0, "Revenue"],
+      ["tbl_001", 1, "Revenue"],
+      ["tbl_001", 2, "Revenue"],
+      ["tbl_001", 3, "Revenue"],
+      ["tbl_001", 4, "Revenue"]
+    ]
+  },
+  {
+    "id": "tc_002",
+    "query": "What was the revenue and units sold for Widget A?",
+    "type": "table_lookup",
+    "expected_answer_number": 150000,
+    "expected_table_id": "tbl_001",
+    "expected_cells": [
+      ["tbl_001", 0, "Revenue"],
+      ["tbl_001", 0, "Units Sold"]
+    ]
+  },
+  {
+    "id": "tc_003",
+    "query": "Which product generated the highest revenue?",
+    "type": "table_ranking",
+    "expected_product": "Gadget D",
+    "expected_answer_number": 320000,
+    "expected_table_id": "tbl_001",
+    "expected_cells": [
+      ["tbl_001", 3, "Product"],
+      ["tbl_001", 3, "Revenue"]
+    ]
+  },
+  {
+    "id": "tc_004",
+    "query": "What is the architectural design of the hybrid retrieval pipeline?",
+    "type": "text_retrieval",
+    "relevant_chunk_ids": ["chunk_arch_001", "chunk_arch_002"],
+    "expected_keywords": ["dense", "bm25", "rrf", "cross-encoder", "reranking"]
+  },
+  {
+    "id": "tc_005",
+    "query": "According to the system documentation, what is the default value of rrf_k?",
+    "type": "text_retrieval",
+    "relevant_chunk_ids": ["chunk_conf_001"],
+    "expected_answer_number": 60
+  }
+]
