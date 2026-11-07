@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" height="100%" style="background:#0b0f19; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="blueCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <g transform="translate(60, 45)">
+    <rect x="-10" y="-15" width="1090" height="60" rx="8" fill="#1e293b" opacity="0.6"/>
+    <circle cx="15" cy="15" r="14" fill="url(#cyanGrad)"/>
+    <text x="15" y="20" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">A</text>
+    <text x="42" y="22" font-size="22" font-weight="800" fill="#f8fafc" letter-spacing="0.5">AtlasRAG Enterprise Architecture</text>
+    <text x="460" y="21" font-size="13" font-weight="500" fill="#94a3b8">| Hybrid Retrieval • Deterministic Table Reasoning • Bidirectional Guardrails</text>
+    <rect x="940" y="4" width="125" height="24" rx="12" fill="#0369a1"/>
+    <text x="1002" y="20" font-size="11" font-weight="700" fill="#e0f2fe" text-anchor="middle">v0.1.0 Production</text>
+  </g>
+
+  <!-- COLUMN 1: Ingestion & Storage -->
+  <g transform="translate(60, 125)">
+    <!-- Section Box -->
+    <rect width="250" height="640" rx="12" fill="url(#blueCard)" stroke="#334155" stroke-width="1.5" filter="url(#dropShadow)"/>
+    <rect width="250" height="42" rx="12" fill="#1e293b"/>
+    <path d="M 0 30 L 0 42 L 250 42 L 250 30 Z" fill="#1e293b"/>
+    <text x="20" y="27" font-size="14" font-weight="700" fill="#38bdf8">1. INGESTION &amp; PARSING</text>
+
+    <!-- Source Documents -->
+    <g transform="translate(20, 60)">
+      <rect width="210" height="70" rx="8" fill="#0f172a" stroke="#475569" stroke-dasharray="3,3"/>
+      <text x="15" y="28" font-size="12" font-weight="700" fill="#e2e8f0">Uploaded Documents</text>
+      <text x="15" y="48" font-size="11" fill="#94a3b8">PDF, DOCX, TXT, Tables</text>
+    </g>
+
+    <!-- Ingestion Worker -->
+    <g transform="translate(20, 155)">
+      <rect width="210" height="85" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="12" font-weight="700" fill="#60a5fa">Layout-Aware Parser</text>
+      <text x="15" y="45" font-size="10.5" fill="#cbd5e1">• pdfplumber &amp; Camelot</text>
+      <text x="15" y="62" font-size="10.5" fill="#cbd5e1">• Table Boundary Detection</text>
+      <text x="15" y="78" font-size="10.5" fill="#cbd5e1">• Recursive Token Chunking</text>
+    </g>
+
+    <!-- Downward Arrow -->
+    <path d="M 125 245 L 125 270" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Storage Backends -->
+    <g transform="translate(20, 275)">
+      <rect width="210" height="155" rx="8" fill="#0f172a" stroke="#334155"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#e2e8f0">Storage &amp; Vector Stores</text>
+
+      <rect x="12" y="36" width="186" height="32" rx="4" fill="#1e293b"/>
+      <text x="22" y="56" font-size="11" font-weight="600" fill="#38bdf8">Qdrant</text>
+      <text x="80" y="56" font-size="10" fill="#94a3b8">Dense 384-dim Vectors</text>
+
+      <rect x="12" y="74" width="186" height="32" rx="4" fill="#1e293b"/>
+      <text x="22" y="94" font-size="11" font-weight="600" fill="#fbbf24">Elasticsearch</text>
+      <text x="110" y="94" font-size="10" fill="#94a3b8">BM25 Inverted</text>
+
+      <rect x="12" y="112" width="186" height="32" rx="4" fill="#1e293b"/>
+      <text x="22" y="132" font-size="11" font-weight="600" fill="#a78bfa">Postgres/MinIO</text>
+      <text x="125" y="132" font-size="10" fill="#94a3b8">Relational + S3</text>
+    </g>
+
+    <!-- Table Registry -->
+    <g transform="translate(20, 455)">
+      <rect width="210" height="85" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="15" y="25" font-size="12" font-weight="700" fill="#fbbf24">Table Metadata Store</text>
+      <text x="15" y="45" font-size="10.5" fill="#cbd5e1">• Dynamic SQLite Sandbox</text>
+      <text x="15" y="62" font-size="10.5" fill="#cbd5e1">• Typed Schemas &amp; Headers</text>
+      <text x="15" y="78" font-size="10.5" fill="#cbd5e1">• Page &amp; BBox Coordinates</text>
+    </g>
+
+    <!-- Celery Queue -->
+    <g transform="translate(20, 560)">
+      <rect width="210" height="55" rx="6" fill="#0f172a" stroke="#64748b"/>
+      <text x="15" y="24" font-size="11" font-weight="700" fill="#94a3b8">Async Worker Engine</text>
+      <text x="15" y="42" font-size="10" fill="#64748b">Celery 5.4 + Redis 7 Broker</text>
+    </g>
+  </g>
+
+  <!-- Data Flow Arrow 1 -> 2 -->
+  <path d="M 315 200 L 350 200" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 315 500 L 350 500" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowAmber)"/>
+
+  <!-- COLUMN 2: API Gateway & Security -->
+  <g transform="translate(355, 125)">
+    <rect width="240" height="640" rx="12" fill="url(#blueCard)" stroke="#334155" stroke-width="1.5" filter="url(#dropShadow)"/>
+    <rect width="240" height="42" rx="12" fill="#1e293b"/>
+    <path d="M 0 30 L 0 42 L 240 42 L 240 30 Z" fill="#1e293b"/>
+    <text x="20" y="27" font-size="14" font-weight="700" fill="#a78bfa">2. GATEWAY &amp; SECURITY</text>
+
+    <!-- User / Client Request -->
+    <g transform="translate(20, 60)">
+      <rect width="200" height="70" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="15" y="28" font-size="12" font-weight="700" fill="#c084fc">User Query Request</text>
+      <text x="15" y="48" font-size="11" fill="#94a3b8">REST API / UI Console</text>
+    </g>
+
+    <path d="M 120 135 L 120 160" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Input Guardrail -->
+    <g transform="translate(20, 165)">
+      <rect width="200" height="95" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#f87171">Input Guardrail Layer</text>
+      <text x="15" y="45" font-size="10.5" fill="#cbd5e1">• Prompt Injection Regex</text>
+      <text x="15" y="62" font-size="10.5" fill="#cbd5e1">• Jailbreak &amp; DAN Blocking</text>
+      <text x="15" y="79" font-size="10.5" fill="#cbd5e1">• Tag Sanitization</text>
+    </g>
+
+    <path d="M 120 265 L 120 290" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Auth & RBAC -->
+    <g transform="translate(20, 295)">
+      <rect width="200" height="95" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#34d399">Auth &amp; RBAC Security</text>
+      <text x="15" y="45" font-size="10.5" fill="#cbd5e1">• JWT Bearer Authentication</text>
+      <text x="15" y="62" font-size="10.5" fill="#cbd5e1">• Role Enforcement (Admin,</text>
+      <text x="25" y="79" font-size="10.5" fill="#cbd5e1">Editor, Viewer)</text>
+    </g>
+
+    <path d="M 120 395 L 120 420" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Query Intent Router -->
+    <g transform="translate(20, 425)">
+      <rect width="200" height="110" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#38bdf8">Query Intent Router</text>
+      <text x="15" y="46" font-size="10.5" fill="#cbd5e1">Analyzes incoming question:</text>
+      <text x="15" y="66" font-size="10" font-weight="600" fill="#60a5fa">→ Text Semantic Query</text>
+      <text x="15" y="84" font-size="10" font-weight="600" fill="#fbbf24">→ Table Math/Agg Query</text>
+      <text x="15" y="100" font-size="10" font-weight="600" fill="#a78bfa">→ Hybrid Mixed Search</text>
+    </g>
+
+    <!-- Audit & Telemetry -->
+    <g transform="translate(20, 560)">
+      <rect width="200" height="55" rx="6" fill="#0f172a" stroke="#64748b"/>
+      <text x="15" y="24" font-size="11" font-weight="700" fill="#94a3b8">Telemetry &amp; Audit Logs</text>
+      <text x="15" y="42" font-size="10" fill="#64748b">Latency, Cost &amp; Token Counters</text>
+    </g>
+  </g>
+
+  <!-- Flow Arrows 2 -> 3 -->
+  <path d="M 600 340 L 640 340" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 600 500 L 640 500" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowAmber)"/>
+
+  <!-- COLUMN 3: Retrieval & Table Engine -->
+  <g transform="translate(645, 125)">
+    <rect width="245" height="640" rx="12" fill="url(#blueCard)" stroke="#334155" stroke-width="1.5" filter="url(#dropShadow)"/>
+    <rect width="245" height="42" rx="12" fill="#1e293b"/>
+    <path d="M 0 30 L 0 42 L 245 42 L 245 30 Z" fill="#1e293b"/>
+    <text x="20" y="27" font-size="14" font-weight="700" fill="#38bdf8">3. HYBRID &amp; TABLE REASON</text>
+
+    <!-- Branch A: Hybrid Retrieval -->
+    <g transform="translate(18, 60)">
+      <rect width="210" height="175" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#60a5fa">Hybrid Retrieval (RRF)</text>
+
+      <rect x="12" y="34" width="186" height="26" rx="4" fill="#1e293b"/>
+      <text x="20" y="51" font-size="10" fill="#38bdf8">Dense Top-K (Cosine Sim)</text>
+
+      <rect x="12" y="66" width="186" height="26" rx="4" fill="#1e293b"/>
+      <text x="20" y="83" font-size="10" fill="#fbbf24">Sparse BM25 (Exact Words)</text>
+
+      <rect x="12" y="98" width="186" height="30" rx="4" fill="#1e293b" stroke="#38bdf8"/>
+      <text x="20" y="118" font-size="10.5" font-weight="600" fill="#e2e8f0">RRF Score: Σ 1 / (60 + r_d)</text>
+
+      <rect x="12" y="134" width="186" height="28" rx="4" fill="#1e293b" stroke="#8b5cf6"/>
+      <text x="20" y="152" font-size="10" font-weight="600" fill="#c084fc">Cross-Encoder Reranker</text>
+    </g>
+
+    <!-- Branch B: Table Engine -->
+    <g transform="translate(18, 255)">
+      <rect width="210" height="235" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#fbbf24">Deterministic Table Engine</text>
+
+      <rect x="12" y="36" width="186" height="36" rx="4" fill="#1e293b"/>
+      <text x="20" y="52" font-size="10.5" font-weight="600" fill="#cbd5e1">Text-to-SQL Generator</text>
+      <text x="20" y="66" font-size="9" fill="#94a3b8">Schema-guided constrained SQL</text>
+
+      <rect x="12" y="78" width="186" height="36" rx="4" fill="#1e293b"/>
+      <text x="20" y="94" font-size="10.5" font-weight="600" fill="#ef4444">AST SQL Validator</text>
+      <text x="20" y="108" font-size="9" fill="#94a3b8">SELECT only, drops DROP/EXEC</text>
+
+      <rect x="12" y="120" width="186" height="46" rx="4" fill="#1e293b" stroke="#10b981"/>
+      <text x="20" y="136" font-size="10.5" font-weight="700" fill="#34d399">Sandboxed SQLite Execution</text>
+      <text x="20" y="150" font-size="9" fill="#cbd5e1">In-Memory, Read-Only, 500ms limit</text>
+      <text x="20" y="161" font-size="9" fill="#10b981">100% exact numerical math</text>
+
+      <rect x="12" y="172" width="186" height="52" rx="4" fill="#1e293b" stroke="#f59e0b"/>
+      <text x="20" y="188" font-size="10.5" font-weight="700" fill="#f59e0b">Cell Citation Mapper</text>
+      <text x="20" y="204" font-size="9" fill="#cbd5e1">Resolves row, col, header, page</text>
+      <text x="20" y="217" font-size="9" fill="#94a3b8">Zero-hallucination cell pointers</text>
+    </g>
+
+    <!-- Context Assembler -->
+    <g transform="translate(18, 510)">
+      <rect width="210" height="105" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#38bdf8">Unified Context Assembler</text>
+      <text x="15" y="45" font-size="10.5" fill="#cbd5e1">• Ranked text chunks</text>
+      <text x="15" y="63" font-size="10.5" fill="#cbd5e1">• SQL execution rows &amp; stats</text>
+      <text x="15" y="81" font-size="10.5" fill="#cbd5e1">• Strict anti-hallucination prompt</text>
+      <text x="15" y="97" font-size="10" fill="#94a3b8">System instructions &amp; boundaries</text>
+    </g>
+  </g>
+
+  <!-- Flow Arrows 3 -> 4 -->
+  <path d="M 895 560 L 935 560" stroke="#10b981" stroke-width="2" marker-end="url(#arrowEmerald)"/>
+
+  <!-- COLUMN 4: Generation & Verification -->
+  <g transform="translate(940, 125)">
+    <rect width="235" height="640" rx="12" fill="url(#blueCard)" stroke="#334155" stroke-width="1.5" filter="url(#dropShadow)"/>
+    <rect width="235" height="42" rx="12" fill="#1e293b"/>
+    <path d="M 0 30 L 0 42 L 235 42 L 235 30 Z" fill="#1e293b"/>
+    <text x="20" y="27" font-size="14" font-weight="700" fill="#10b981">4. LLM &amp; VERIFICATION</text>
+
+    <!-- Generation LLM -->
+    <g transform="translate(18, 60)">
+      <rect width="200" height="95" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#34d399">LiteLLM Unified Client</text>
+      <text x="15" y="44" font-size="10.5" fill="#cbd5e1">• GPT-4o / Claude 3.5</text>
+      <text x="15" y="61" font-size="10.5" fill="#cbd5e1">• Gemini 1.5 Pro / Flash</text>
+      <text x="15" y="78" font-size="10.5" fill="#cbd5e1">• Local Ollama / Llama 3</text>
+    </g>
+
+    <path d="M 118 160 L 118 185" stroke="#10b981" stroke-width="2" marker-end="url(#arrowEmerald)"/>
+
+    <!-- Citation Extraction Engine -->
+    <g transform="translate(18, 190)">
+      <rect width="200" height="95" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#38bdf8">Citation Resolution Engine</text>
+      <text x="15" y="44" font-size="10.5" fill="#cbd5e1">• Regex [N] Bracket Parser</text>
+      <text x="15" y="61" font-size="10.5" fill="#cbd5e1">• Document ID &amp; Page Linker</text>
+      <text x="15" y="78" font-size="10.5" fill="#cbd5e1">• Table Cell Coordinate Map</text>
+    </g>
+
+    <path d="M 118 290 L 118 315" stroke="#10b981" stroke-width="2" marker-end="url(#arrowEmerald)"/>
+
+    <!-- Output Guardrail -->
+    <g transform="translate(18, 320)">
+      <rect width="200" height="135" rx="8" fill="#0f172a" stroke="#ec4899" stroke-width="1.5"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#f472b6">Output Guardrail Layer</text>
+      <text x="15" y="45" font-size="10.5" fill="#cbd5e1">• Claim Decomposition</text>
+      <text x="15" y="63" font-size="10.5" fill="#cbd5e1">• NLI Entailment Scoring</text>
+      <text x="15" y="81" font-size="10.5" fill="#cbd5e1">• Groundedness Score %</text>
+      <text x="15" y="100" font-size="10" font-weight="600" fill="#34d399">✓ SUPPORTED (entailed)</text>
+      <text x="15" y="117" font-size="10" font-weight="600" fill="#ef4444">✗ NOT_SUPPORTED (warn/block)</text>
+    </g>
+
+    <path d="M 118 460 L 118 485" stroke="#10b981" stroke-width="2" marker-end="url(#arrowEmerald)"/>
+
+    <!-- Verified Output Payload -->
+    <g transform="translate(18, 490)">
+      <rect width="200" height="125" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+      <text x="15" y="24" font-size="12" font-weight="700" fill="#34d399">Verified Final Response</text>
+      <text x="15" y="45" font-size="10" fill="#cbd5e1">• Natural language answer</text>
+      <text x="15" y="62" font-size="10" fill="#cbd5e1">• Exact source references</text>
+      <text x="15" y="79" font-size="10" fill="#cbd5e1">• Cell coordinate highlights</text>
+      <text x="15" y="96" font-size="10" fill="#cbd5e1">• Groundedness score badge</text>
+      <text x="15" y="113" font-size="10" fill="#94a3b8">• Latency &amp; token telemetry</text>
+    </g>
+  </g>
+</svg>
